@@ -6,6 +6,7 @@ import {styles} from './styles';
 
 const SwitchBoxWrapper: FC<ISwitchBoxWrapperProps> = ({data}) => {
   // arrayMa
+
   return (
     <View style={styles.switchBoxContainer}>
       {data.length ? (

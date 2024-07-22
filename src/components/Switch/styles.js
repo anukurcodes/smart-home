@@ -24,21 +24,21 @@ export const styles = StyleSheet.create({
   switchTitle: {
     flex: 1,
   },
-  switchOn: {
-    /*     WebkitBoxShadow: 'inset 0 20 25 -12 rgba(0, 0, 0, 0.75)',
-    MozBoxShadow: 'inset 0 20 25 -12 rgba(0, 0, 0, 0.75)',
-    BoxShadow: 'inset 0 20 25 -12 rgb(111 111 111 / 75%)', */
-    // shadowT
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 20},
-    shadowOpacity: 0.25,
-    shadowRadius: -12,
-  },
-  switchOff: {
-    WebkitBoxShadow: 'inset 0 -20 25 -12 rgba(0, 0, 0, 0.75)',
-    MozBoxShadow: 'inset 0 -20 25 -12 rgba(0, 0, 0, 0.75)',
-    BoxShadow: 'inset 0 -20 25 -12 rgb(111 111 111 / 75%)',
-  },
+  // switchOn: {
+  //   /*     WebkitBoxShadow: 'inset 0 20 25 -12 rgba(0, 0, 0, 0.75)',
+  //   MozBoxShadow: 'inset 0 20 25 -12 rgba(0, 0, 0, 0.75)',
+  //   BoxShadow: 'inset 0 20 25 -12 rgb(111 111 111 / 75%)', */
+  //   // shadowT
+  //   shadowColor: '#000',
+  //   shadowOffset: {width: 0, height: 20},
+  //   shadowOpacity: 0.25,
+  //   shadowRadius: -12,
+  // },
+  // switchOff: {
+  //   WebkitBoxShadow: 'inset 0 -20 25 -12 rgba(0, 0, 0, 0.75)',
+  //   MozBoxShadow: 'inset 0 -20 25 -12 rgba(0, 0, 0, 0.75)',
+  //   BoxShadow: 'inset 0 -20 25 -12 rgb(111 111 111 / 75%)',
+  // },
   indicator: {
     width: 30,
     height: 10,
