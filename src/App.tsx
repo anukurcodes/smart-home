@@ -12,6 +12,7 @@ import {
   SafeAreaView,
   ScrollView,
   StatusBar,
+  StyleSheet,
   useColorScheme,
   View,
 } from 'react-native';
@@ -19,32 +20,6 @@ import {
 // import AnimatedSwitch from './components/SwitchWrapper';
 import Home from './screens/Home';
 import Constants from './utils/constants';
-
-/* function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        Hello {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-} */
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -66,7 +41,7 @@ function App(): React.JSX.Element {
       />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
+        style={[Styles.appWrapper, backgroundStyle]}>
         {/* <Header /> */}
         <View
           style={{
@@ -98,3 +73,10 @@ function App(): React.JSX.Element {
 }
 
 export default App;
+
+const Styles = StyleSheet.create({
+  appWrapper: {
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+  },
+});

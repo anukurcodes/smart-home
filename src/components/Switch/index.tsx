@@ -1,24 +1,29 @@
-import React, {FC} from 'react';
-import {ISwitchBoxProps} from '../../interfaces';
+import React, {FC, useState} from 'react';
+import {IPublishPayload, ISwitchBoxProps} from '../../interfaces';
 import InsetShadow from 'react-native-inset-shadow';
 
 import {Pressable, Text, View} from 'react-native';
 import {styles} from './styles';
 
-const Switch: FC<ISwitchBoxProps> = props => {
+const Switch: FC<ISwitchBoxProps> = ({data, onClick}) => {
   // const isDarkMode = useColorScheme() === 'dark';
-  var {isOn, title} = props;
+  var {id, isOn, title} = data;
+  const [switchOn, setSwitchOn] = useState(isOn);
   const handleTogle = () => {
-    isOn = !isOn;
-    console.warn('asa');
+    setSwitchOn(!switchOn);
+    const payload: IPublishPayload = {
+      cmd: !switchOn ? 'ON' : 'OFF',
+      data: id,
+    };
+    onClick && onClick(payload);
   };
   return (
     <Pressable onPress={handleTogle}>
       <InsetShadow
         containerStyle={styles.switchWrapper}
-        top={isOn}
+        top={switchOn}
         right={false}
-        bottom={!isOn}
+        bottom={!switchOn}
         left={false}
         shadowColor="#000"
         shadowOffset={20}
@@ -33,7 +38,7 @@ const Switch: FC<ISwitchBoxProps> = props => {
         <View
           style={[
             styles.indicator,
-            isOn ? styles.indecatorOn : styles.indecatorOff,
+            switchOn ? styles.indecatorOn : styles.indecatorOff,
           ]}
         />
         {/* </View> */}

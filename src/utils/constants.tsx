@@ -13,5 +13,9 @@ const Constants = {
       off: '#C90000',
     },
   },
+  mqttTopic: {
+    pub: 'to/device_e465b8e75668',
+    sub: 'from/device_e465b8e75668',
+  },
 };
 export default Constants;

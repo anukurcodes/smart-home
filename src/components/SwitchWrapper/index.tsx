@@ -4,13 +4,19 @@ import {Text, View} from 'react-native';
 import Switch from '../Switch';
 import {styles} from './styles';
 
-const SwitchBoxWrapper: FC<ISwitchBoxWrapperProps> = ({data}) => {
+const SwitchBoxWrapper: FC<ISwitchBoxWrapperProps> = ({data, onClick}) => {
   // arrayMa
 
   return (
     <View style={styles.switchBoxContainer}>
       {data.length ? (
-        data.map(sw => <Switch isOn={sw.isOn} title={sw.title} />)
+        data.map((sw, key) => (
+          <Switch
+            key={key}
+            data={{id: sw.id, isOn: sw.isOn, title: sw.title}}
+            onClick={onClick}
+          />
+        ))
       ) : (
         <Text>No Switch</Text>
       )}
