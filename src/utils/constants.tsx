@@ -1,5 +1,6 @@
 const Constants = {
   colors: {
+    white: '#FFF',
     darkMode: {
       appBG: '#000',
       textColor: '#FFF',

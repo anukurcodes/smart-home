@@ -4,6 +4,7 @@ import SwitchBoxWrapper from '../../components/SwitchWrapper';
 
 import MQTT, {IMqttClient, QoS} from 'sp-react-native-mqtt';
 import Constants from '../../utils/constants';
+import {setError} from '../../redux/misc/actions';
 
 const new_client = MQTT.createClient({
   clientId: 'e465b8e75668',
@@ -50,7 +51,8 @@ const Home: FC<IHomeProps> = () => {
           client.connect();
         })
         .catch(err => {
-          console.log(err);
+          console.error(err);
+          setError(err);
         });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -85,8 +87,6 @@ const Home: FC<IHomeProps> = () => {
   };
 
   const publishToTopic = (dataToPublish: IPublishPayload) => {
-    // console.log('"msg" - ', dataToPublish);
-
     mqttClient?.publish(
       Constants.mqttTopic.pub,
       JSON.stringify(dataToPublish),
